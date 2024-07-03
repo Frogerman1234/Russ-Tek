@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Under Construction</title>
+    <script>
+    function fetchRandomImage() {
+      // Replace with the URL of an API that provides random images
+      const apiUrl = 'https://picsum.photos/1920/1080';
+      const imgElement = document.getElementById('random-image');
+      imgElement.src = apiUrl; // Set the src attribute of the image to the fetched image
+    }
+  </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,8 +26,10 @@
         }
     </style>
 </head>
-<body>
+<body onload="fetchRandomImage()">>
     <h1>We're Under Construction!</h1>
     <p>Sorry for the inconvenience, but we're currently creating our website.<br>Please check back later.</p><br>In the meantime, you can contact us at <a href="mailto:support@russ-tek.com">support@russ-tek.com</a>
+    <br><br><br>
+    <img id="random-image" alt="Randomly generated image" width="50%" height="auto">
 </body>
 </html>
