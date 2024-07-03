@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
+    <title>Website Under Construction</title>
     <script>
-    function fetchRandomImage() {
-      // Replace with the URL of an API that provides random images
-      const apiUrl = 'https://picsum.photos/1920/1080';
-      const imgElement = document.getElementById('random-image');
-      imgElement.src = apiUrl; // Set the src attribute of the image to the fetched image
-    }
-  </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: black;
-            color: white;
+      function fetchRandomImage() {
+        // Replace with the URL of an API that provides random images
+        const apiUrl = 'https://picsum.photos/1920/1080';
+        const imgElement = document.getElementById('random-image');
+        imgElement.src = apiUrl; // Set the src attribute of the image to the fetched image
+      }
+    </script>
+    <script>
+      function toggleContent() {
+        const imgElement = document.getElementById('random-image');
+        const iframeElement = document.getElementById('google-form');
+        if (imgElement.style.display === 'none') {
+          imgElement.style.display = 'block'; // Show image
+          iframeElement.style.display = 'none'; // Hide form
+        } else {
+          imgElement.style.display = 'none'; // Hide image
+          iframeElement.style.display = 'block'; // Show form
         }
+      }
+    </script>
+    <style>
+      #google-form {
+        display: none;
+        /* Initially hide both elements */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: black;
+        color: white;
+      }
     </style>
-</head>
-<body onload="fetchRandomImage()">
-    <h1>We're Under Construction!</h1>
-    <p>Sorry for the inconvenience, but we're currently creating our website.<br>Please check back later.</p><br>In the meantime, you can contact us at <a href="mailto:support@russ-tek.com">support@russ-tek.com</a>
-    <br><br><br>
+  </head>
+  <body onload="fetchRandomImage()">
+    <h1>Website Under Construction</h1>
+    <p>We are currently working on improving our website. Please check back later for updates.</p>
+    <p>In the meantime, you can contact us at <a href="mailto:info@example.com">info@example.com</a> or fill out our form by clicking on the toggle buttton. </p>
+    <!-- Button to toggle between content -->
+    <button onclick="toggleContent()">Toggle Content</button>
+    <!-- Image element that will be populated with a random image -->
+    <br>
+    <br>
     <img id="random-image" alt="Randomly generated image" width="50%" height="auto">
-</body>
+    <!-- Google Form embed code -->
+    <iframe id="google-form" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </body>
 </html>
